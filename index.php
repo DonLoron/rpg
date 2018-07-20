@@ -7,8 +7,12 @@ RPG::main();
 <head>
   <meta charset="UTF-8">
   <title>RPG</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
+  <div id="rpg">
 
+  </div>
+  <script src="assets/js/RPG.js"></script>
 </body>
 </html>
