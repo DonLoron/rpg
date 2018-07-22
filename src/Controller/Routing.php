@@ -26,5 +26,6 @@ class Routing
 
   private static function send() {
     echo json_encode(self::$responseData);
+    die();
   }
 }
