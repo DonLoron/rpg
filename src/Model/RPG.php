@@ -19,11 +19,20 @@ class RPG extends SessionStore
 
   private function doTurn() {
 
-    //echo 'lets go on!';
+    switch ($this->state) {
+      case State::INIT:
+        break;
+      case State::CHARACTER_SELECTION:
+        break;
+      case State::IN_GAME:
+        break;
+      case State::END:
+        break;
+    }
 
   }
 
-  public static function main() {
+  public static function init() {
 
     $rpg = self::restore();
 
@@ -32,5 +41,7 @@ class RPG extends SessionStore
     }
 
     $rpg->doTurn();
+
+    return $rpg;
   }
 }

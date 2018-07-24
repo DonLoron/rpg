@@ -3,16 +3,6 @@
  */
 var RPG = function() {
 
-  const APP_CONTAINER_ID = "#rpg";
 
-  this.app;
-
-  this.init = function() {
-    app = new Vue({
-      el: APP_CONTAINER_ID
-    });
-  };
-
-  init();
 
 } ();

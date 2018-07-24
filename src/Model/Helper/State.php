@@ -11,6 +11,7 @@ class State
   const INIT = 1;
   const CHARACTER_SELECTION = 2;
   const IN_GAME = 3;
+  const END = 4;
 
   public $currentState = self::INIT;
 
