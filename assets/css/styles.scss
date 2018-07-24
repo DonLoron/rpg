@@ -1,0 +1,61 @@
+@import "normalize.css";
+
+$black: #222;
+
+* {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+  line-height: 1.2;
+  color: $black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  min-height: 100% !important;
+}
+
+body {
+  padding: 2rem;
+  margin: 0;
+  height: 100%;
+  min-height: 100% !important;
+}
+
+/* game styles */
+
+main {
+  height: 100%;
+  display: flex;
+  border: 2px dashed $black;
+}
+
+aside {
+  width: 20%;
+  border-right: 2px dashed $black;
+
+  h1 {
+    padding: .7rem 1.5rem;
+    border-bottom: 2px dashed $black;
+    font-size: 2.5rem;
+  }
+}
+
+article {
+  width: 80%;
+  padding-left: 2rem;
+}
