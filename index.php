@@ -1,8 +1,6 @@
 <?php
 error_reporting(E_ALL);
-
 require_once "src/Autoloader.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="de">

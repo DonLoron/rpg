@@ -14,8 +14,10 @@ class RPG extends SessionStore
 
   public function __construct()
   {
+
     $this->state = new State();
     $this->story = new Story();
+
   }
 
   private function doTurn() {

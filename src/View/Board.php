@@ -14,7 +14,6 @@ class Board
   protected $data;
 
   public function parse($template) {
-
     ob_start();
     include self::$templateDir . "$template";
     return ob_get_clean();
