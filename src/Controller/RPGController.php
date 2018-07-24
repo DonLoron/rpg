@@ -11,7 +11,6 @@ class RPGController
 
   private $RPG;
 
-  private $gameBoard;
   private $characterBoard;
   private $storyBoard;
   private $actionBoard;
@@ -21,14 +20,17 @@ class RPGController
     //trigger turn
     $this->RPG = RPG::init();
 
-    $this->gameBoard = new Board();
     $this->characterBoard = new Board();
     $this->storyBoard = new Board();
     $this->actionBoard = new Board();
+
   }
 
   public function parse() {
-    return "Hello!";
+
+    $gameBoard = new GameBoard($this->characterBoard, $this->storyBoard, $this->actionBoard);
+
+    return $gameBoard->parse("gameBoard.php");
   }
 
   public static function main() {
