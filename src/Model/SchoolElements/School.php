@@ -9,17 +9,17 @@
 class School {
 
   public $name;
-  public $klassen;
+  public $schoolclasses;
 
   public function __construct($name)
   {
     $this->name = $name;
-    $this->klassen = new SchoolclassCollection();
+    $this->schoolclasses = new SchoolclassCollection();
   }
 
-  public function appendKlasse(Schoolclass $klasse) {
-    $this->klassen->append($klasse);
-    $klasse->setSchulhaus($this);
+  public function addSchoolclass(Schoolclass $schoolclass) {
+    $this->schoolclasses->add($schoolclass);
+    $schoolclass->setSchoolhouse($this);
   }
 
 }

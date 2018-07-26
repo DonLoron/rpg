@@ -9,8 +9,9 @@
 class RPG extends SessionStore
 {
 
-  private $state;
-  private $story;
+  public $state;
+  public $story;
+  public $gameData;
 
   public function __construct()
   {
@@ -24,6 +25,7 @@ class RPG extends SessionStore
 
     switch ($this->state) {
       case State::INIT:
+        $this->initGameData();
         break;
       case State::CHARACTER_SELECTION:
         break;
@@ -32,6 +34,23 @@ class RPG extends SessionStore
       case State::END:
         break;
     }
+
+  }
+
+  /**
+   *
+   */
+  private function initGameData() {
+
+    $this->gameData = GameGenerator::generateBaseData();
+
+    $s = $this->story->addStoryPoint();
+
+    echo '<pre>' . print_r($this->story->getStories()[0], true) . '</pre>';
+
+    $s->test = "B";
+
+    echo '<pre>' . print_r($this->story->getStories()[0], true) . '</pre>';
 
   }
 

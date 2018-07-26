@@ -9,7 +9,7 @@
 
 class PersonCollection extends Collection {
 
-  public function append(Person $item) {
+  public function add(Person $item) {
     $this->data[] = $item;
   }
 

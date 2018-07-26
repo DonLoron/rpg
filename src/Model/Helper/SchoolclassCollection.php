@@ -5,7 +5,7 @@
  */
 class SchoolclassCollection extends Collection {
 
-  public function append(Schoolclass $item) {
+  public function add(Schoolclass $item) {
     $this->data[] = $item;
   }
 

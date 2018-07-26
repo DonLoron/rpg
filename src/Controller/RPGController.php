@@ -17,11 +17,12 @@ class RPGController
 
   public function __construct()
   {
+
     //trigger turn
     $this->RPG = RPG::init();
 
     $this->characterBoard = new Board();
-    $this->storyBoard = new Board();
+    $this->storyBoard = new StoryBoard($this->RPG->story);
     $this->actionBoard = new Board();
 
   }

@@ -10,59 +10,59 @@
 class Schoolclass {
 
   public $name;
-  public $stufe;
+  public $tier;
 
-  protected $schulhaus;
-  protected $schueler;
-  protected $lehrer;
+  protected $schoolhouse;
+  protected $students;
+  protected $teachers;
 
-  public function __construct($name, $stufe)
+  public function __construct($name, $tier)
   {
 
     $this->name = $name;
-    $this->stufe = $stufe;
+    $this->tier = $tier;
 
-    $this->schueler = new PersonCollection();
-    $this->lehrer = new PersonCollection();
+    $this->students = new PersonCollection();
+    $this->teachers = new PersonCollection();
   }
 
   /**
-   * @param mixed $schulhaus
+   * @param mixed $schoolhouse
    */
-  public function setSchulhaus($schulhaus)
+  public function setSchoolhouse($schoolhouse)
   {
-    $this->schulhaus = $schulhaus;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getLehrer()
-  {
-    return $this->lehrer;
+    $this->schoolhouse = $schoolhouse;
   }
 
   /**
    * @return mixed
    */
-  public function getSchueler()
+  public function getTeacher()
   {
-    return $this->schueler;
+    return $this->teachers;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getStudents()
+  {
+    return $this->students;
   }
 
   /**
    * @param Teacher $lehrer
    */
-  public function addLehrer(Teacher $lehrer) {
-    $this->lehrer->append($lehrer);
+  public function addTeacher(Teacher $lehrer) {
+    $this->teachers->add($lehrer);
     $lehrer->setKlasse($this);
   }
 
   /**
    * @param Student $schueler
    */
-  public function addSchueler(Student $schueler) {
-    $this->schueler->append($schueler);
+  public function addStudent(Student $schueler) {
+    $this->students->add($schueler);
     $schueler->setKlasse($this);
   }
 }
