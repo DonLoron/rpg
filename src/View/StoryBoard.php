@@ -9,10 +9,8 @@
 class StoryBoard extends Board
 {
 
-  private $story;
-
   public function __construct(Story $story)
   {
-    $this->story = $story;
+    $this->addData('story', $story);
   }
 }

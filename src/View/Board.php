@@ -19,4 +19,7 @@ class Board
     return ob_get_clean();
   }
 
+  public function addData($key, $val) {
+    $this->data[$key] = $val;
+  }
 }

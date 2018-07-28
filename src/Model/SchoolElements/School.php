@@ -14,7 +14,7 @@ class School {
   public function __construct($name)
   {
     $this->name = $name;
-    $this->schoolclasses = new SchoolclassCollection();
+    $this->schoolclasses = new Collection();
   }
 
   public function addSchoolclass(Schoolclass $schoolclass) {

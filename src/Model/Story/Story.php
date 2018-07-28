@@ -9,11 +9,9 @@
 class Story
 {
 
-  private $stories;
-
   public function __construct()
   {
-    $this->stories = new StoryPointCollection();
+    $this->stories = new Collection();
   }
 
   public function addStoryPoint() {

@@ -11,9 +11,20 @@ class StoryPoint
 
   public $test;
 
+  private $isArchived = false;
+
   public function __construct($test = "")
   {
     $this->test = $test;
+  }
+
+  public function isArchived() {
+    return $this->isArchived;
+  }
+
+  public function __wakeup()
+  {
+    $this->isArchived = true;
   }
 
 }

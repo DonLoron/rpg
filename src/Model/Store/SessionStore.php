@@ -19,6 +19,9 @@ class SessionStore
 
     self::startSession();
 
+    //debug
+    file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/rpg/debug.txt', print_r($this, true));
+
     $_SESSION[self::$STORE][session_id()] = serialize($this);
 
   }
@@ -27,7 +30,7 @@ class SessionStore
    * restores element
    * @return mixed|null
    */
-  protected function restore() {
+  protected static function restore() {
 
     self::startSession();
 

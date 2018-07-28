@@ -23,7 +23,7 @@ class RPG extends SessionStore
 
   private function doTurn() {
 
-    switch ($this->state) {
+    switch ($this->state->currentState) {
       case State::INIT:
         $this->initGameData();
         break;
@@ -46,11 +46,7 @@ class RPG extends SessionStore
 
     $s = $this->story->addStoryPoint();
 
-    echo '<pre>' . print_r($this->story->getStories()[0], true) . '</pre>';
-
     $s->test = "B";
-
-    echo '<pre>' . print_r($this->story->getStories()[0], true) . '</pre>';
 
   }
 

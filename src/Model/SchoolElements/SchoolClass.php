@@ -22,8 +22,8 @@ class Schoolclass {
     $this->name = $name;
     $this->tier = $tier;
 
-    $this->students = new PersonCollection();
-    $this->teachers = new PersonCollection();
+    $this->students = new Collection();
+    $this->teachers = new Collection();
   }
 
   /**
