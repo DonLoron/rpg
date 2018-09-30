@@ -23,7 +23,7 @@ class RPGController
 
     $this->characterBoard = new Board();
     $this->storyBoard = new StoryBoard($this->RPG->story);
-    $this->actionBoard = new Board();
+    $this->actionBoard = new ActionBoard($this->RPG->action);
 
   }
 

@@ -8,9 +8,4 @@
  */
 class StoryBoard extends Board
 {
-
-  public function __construct(Story $story)
-  {
-    $this->addData('story', $story);
-  }
 }

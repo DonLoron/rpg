@@ -9,13 +9,19 @@
 class StoryPoint
 {
 
-  public $test;
+  public $title;
+  public $text;
+  public $data;
+  public $time;
 
   private $isArchived = false;
 
-  public function __construct($test = "")
+  public function __construct($text = "", $title = "", $data = [])
   {
-    $this->test = $test;
+    $this->text = $text;
+    $this->title = $title;
+    $this->data = $data;
+    $this->time = RPG::$time;
   }
 
   public function isArchived() {

@@ -13,6 +13,11 @@ class Board
 
   protected $data;
 
+  public function __construct($data = null)
+  {
+    if(isset($data)) $this->data = $data;
+  }
+
   public function parse($template) {
     ob_start();
     include self::$templateDir . "$template";

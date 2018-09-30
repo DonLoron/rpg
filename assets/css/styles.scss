@@ -27,6 +27,26 @@ h1, h2, h3 {
   font-weight: bold;
   margin: 0;
 }
+p {
+
+  margin: 0;
+
+  & + p {
+    margin-top: 1em;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+
+  & + ul {
+    margin-top: 1em;
+  }
+}
 
 html {
   height: 100%;
@@ -60,6 +80,21 @@ aside {
 }
 
 article {
+
+  display: flex;
+  flex-direction: column;
   width: 80%;
-  padding-left: 2rem;
+
+  > * {
+    padding: 1.7rem 2rem;
+  }
+
+  #storyBoard {
+    flex: 1 1 auto;
+  }
+
+  #actionBoard {
+    border-top: 2px dashed $black;
+    min-height: 15rem;
+  }
 }

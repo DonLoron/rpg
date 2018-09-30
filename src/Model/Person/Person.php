@@ -9,15 +9,15 @@
 
 class Person {
 
-  private $klasse;
+  private $schoolclass;
 
-  public $vorname;
-  public $nachname;
+  public $firstname;
+  public $lastname;
 
-  public function __construct($vorname, $nachname)
+  public function __construct($firstname, $lastname)
   {
-    $this->vorname = $vorname;
-    $this->nachname= $nachname;
+    $this->firstname = $firstname;
+    $this->lastname= $lastname;
   }
 
   /**
@@ -25,14 +25,14 @@ class Person {
    */
   public function getKlasse()
   {
-    return $this->klasse;
+    return $this->schoolclass;
   }
 
   /**
    * @return mixed
    */
-  public function setKlasse(Schoolclass $klasse)
+  public function setKlasse(Schoolclass $schoolclass)
   {
-    $this->klasse = $klasse;
+    $this->schoolclass = $schoolclass;
   }
 }

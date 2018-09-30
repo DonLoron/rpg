@@ -11,13 +11,17 @@ class RPG extends SessionStore
 
   public $state;
   public $story;
-  public $gameData;
+  public static $time;
+  public static $gameData;
+  public $action;
 
   public function __construct()
   {
 
     $this->state = new State();
     $this->story = new Story();
+
+    self::$time = new Time();
 
   }
 
@@ -26,6 +30,7 @@ class RPG extends SessionStore
     switch ($this->state->currentState) {
       case State::INIT:
         $this->initGameData();
+        $this->state->currentState = State::CHARACTER_SELECTION;
         break;
       case State::CHARACTER_SELECTION:
         break;
@@ -42,17 +47,23 @@ class RPG extends SessionStore
    */
   private function initGameData() {
 
-    $this->gameData = GameGenerator::generateBaseData();
+    self::$gameData = GameGenerator::generateBaseData();
 
-    $s = $this->story->addStoryPoint();
+    $s = $this->story->addStoryPoint(new StoryPoint("The game, has started, choose your character.","Game initialized"));
 
-    $s->test = "B";
+    $charcterChooseAction = new Action("character_choose_name", "Wähle deinen Namen.");
+
+    $charcterChooseAction->addField(new ActionField("player_name", "text", "Player Name"));
+
+    $this->action = $charcterChooseAction;
 
   }
 
   public static function init() {
 
-    $rpg = self::restore();
+    $rpg = null;
+
+    if(!isset($_GET["reset"])) $rpg = self::restore();
 
     if($rpg === null) {
       $rpg = new RPG();

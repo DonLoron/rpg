@@ -8,5 +8,4 @@
  */
 class ActionBoard extends Board
 {
-
 }

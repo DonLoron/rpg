@@ -14,10 +14,9 @@ class Story
     $this->stories = new Collection();
   }
 
-  public function addStoryPoint() {
-    $storyPoint = new StoryPoint("A");
-    $this->stories->add($storyPoint);
-    return $storyPoint;
+  public function addStoryPoint(StoryPoint $point) {
+    $this->stories->add($point);
+    return $point;
   }
 
   public function getStories () {
